@@ -29,9 +29,6 @@
     <!-- GOAL: Make a Functioning, Responsive, and Neat Coming Soon Page with
      HTML, W3.CSS, and possibly JS.
        TODO:
-       -Smaller subheading location center near
-       -Appealing free ton use background
-       -Appropriate text font and color
        -Check for mobile Responsiveness
        -Possible footer
        -Possible countdown timer
@@ -46,7 +43,42 @@
             <h3 class="w3-large w3-center">The Best Website Ever!</h3>
         </div>
 
+        <div class= "countdown"></div>
+            <p class="child"></p>
+        </div>
     </div>
+
+   <script type="text/javascript">
+  
+       var countDownDate = new Date("Aug 28, 2018 3:00:00").getTime();
+
+       var x =setInterval(function(){
+           var now = new Date().getTime();
+        //    console.log(now);
+           var distance = countDownDate - now;
+           var days = Math.floor(distance/ (1000 * 60 * 60 *24));
+           var hours =  Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+           var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+           var seconds = Math.floor ((distance % (1000 * 60)) / 1000);
+    
+     // Output the result in an element with id="demo"
+     function printCountdown(){
+         var countdown = document.getElementsByClassName("countdown")[0];
+         console.log(countdown);
+     countdown.getElementsByClassName("child")[0].innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    printCountdown();
+
+     }
+    // Write this when coundown is complete 
+    // if (distance < 0) {
+    //     clearInterval(x);
+    //     document.getElementByClassName("countdown")[0].innerHTML = "IT IS HERE!";
+    // }
+
+    } , 1000);
+    </script>
+
 </body>
 
 </html>
